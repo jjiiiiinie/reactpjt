@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import ProductViews from "../product/ProductViews";
 
-export default function Shop() {
+export default function Shop({categoryName}) {
 
   const [ sliceNumber, setSliceNumber ] = useState(15);
   const [ columnNumber, setColumnNumber ] = useState(4);
@@ -38,6 +38,7 @@ export default function Shop() {
             <ProductViews 
               sliceNumber = {sliceNumber}
               columnNumber = {columnNumber}
+              categoryName = {categoryName}
             />
           </div>
         </div>

@@ -1,39 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import UseFetch from '../../../../hooks/UseFetch';
+import SideCategoryList from './SideCategoryList';
+import SideColorList from './SideColorList';
 
+export default function SideBar({setCategoryName, setColorName}) {
 
-export default function SideBar() {
-
-  var process = require('../../../../myprocess.json')
-
-  const [ categoryData, setCategoryData ] = useState([]);
-  const [ colorData, setColorData ] = useState([]);
-  const [ sizeData, setSizeData ] = useState([]);
-
-  useEffect(() => {
-    fetch(`http://${process.IP}:${process.PORT}/category`)
-    .then(res => {
-      return res.json();
-    })
-    .then(data => {
-      setCategoryData(data);
-    });
-
-    fetch(`http://${process.IP}:${process.PORT}/color`)
-    .then(res => {
-      return res.json();
-    })
-    .then(data => {
-      setColorData(data);
-    });
-
-    fetch(`http://${process.IP}:${process.PORT}/size`)
-    .then(res => {
-      return res.json();
-    })
-    .then(data => {
-      setSizeData(data);
-    });
-  },[]);
+  const categoryData = UseFetch("category");
+  const colorData = UseFetch("color");
+  const sizeData = UseFetch("size");
   
   return(
     <div className="col-lg-3 order-2 order-lg-1">
@@ -51,48 +25,45 @@ export default function SideBar() {
           <h4 className="pro-sidebar-title">Categories</h4>
           <div className="sidebar-widget-list mt-30">
             <ul>
-              <li>
-                <div className="sidebar-widget-list-left">
-                  <button><span className="checkmark"></span> All Categories</button>
-                  {
-                    categoryData.map(item => (
-                      <button key={item.id}><span className="checkmark"></span>{item.name}</button>
-                    ))
-                  }
-                </div>
-              </li>
+              {
+                categoryData.map(item => (
+                  <SideCategoryList 
+                    key = {item.id}
+                    item = {item}
+                    setCategoryName = {setCategoryName}
+                  />
+                ))
+              }
             </ul>
           </div>
 
           <h4 className="pro-sidebar-title">Color</h4>
           <div className="sidebar-widget-list mt-30">
             <ul>
-              <li>
-                <div className="sidebar-widget-list-left">
-                  <button><span className="checkmark"></span> All Colors</button>
-                  {
-                    colorData.map(item => (
-                      <button key={item.id}><span className="checkmark"></span>{item.name}</button>
-                    ))
-                  }
-                </div>
-              </li>
+              {
+                colorData.map(item => (
+                  <SideColorList 
+                    key = {item.id}
+                    item = {item}
+                    setColorName = {setColorName}
+                  />
+                ))
+              }
             </ul>
           </div>
 
           <h4 className="pro-sidebar-title">Size</h4>
           <div className="sidebar-widget-list mt-30">
             <ul>
-              <li>
-                <div className="sidebar-widget-list-left">
-                  <button><span className="checkmark"></span> All Sizes</button>
-                  {
-                    sizeData.map(item => (
-                      <button key={item.id}><span className="checkmark"></span>{item.name}</button>
-                    ))
-                  }
-                </div>
-              </li>
+              {
+                sizeData.map(item => (
+                  <li key={item.id}>
+                    <div className="sidebar-widget-list-left">
+                      <button><span className="checkmark"></span>{item.name}</button>
+                    </div>
+                  </li>
+                ))
+              }
             </ul>
           </div>
         </div>

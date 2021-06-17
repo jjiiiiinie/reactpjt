@@ -9,6 +9,7 @@ import Compare from './components/pages/compare/Compare';
 import WishList from './components/pages/wishlist/WishList';
 import Cart from './components/pages/cart/Cart';
 import ProductList from './components/pages/product/ProductList';
+import MyAccount from './components/pages/myaccount/MyAccount'
 
 import "./assets/css/style.css";
 import "./assets/css/mystyle.css";
@@ -24,14 +25,15 @@ function App()  {
     <BrowserRouter>
       <ToTop>
         <Switch>
-          <Route exact path="/"><Home></Home></Route>
-          <Route exact path="/features"><Features></Features></Route>
-          <Route exact path="/pricing"><Pricing></Pricing></Route>
-          <Route exact path="/productdetail/:id"><ProductDetail></ProductDetail></Route>
-          <Route exact path="/compare"><Compare></Compare></Route>
-          <Route exact path="/wishlist"><WishList></WishList></Route>
-          <Route exact path="/cart"><Cart></Cart></Route>
-          <Route exact path="/productlist"><ProductList></ProductList></Route>
+          <Route exact path="/"><Home /></Route>
+          <Route exact path="/features"><Features /></Route>
+          <Route exact path="/pricing"><Pricing /></Route>
+          <Route exact path="/productdetail/:id"><ProductDetail /></Route>
+          <Route exact path="/compare"><Compare /></Route>
+          <Route exact path="/wishlist"><WishList /></Route>
+          <Route exact path="/cart"><Cart /></Route>
+          <Route exact path="/productlist"><ProductList /></Route>
+          <Route exact path="/myaccount"><MyAccount /></Route>
         </Switch>
       </ToTop>
     </BrowserRouter>

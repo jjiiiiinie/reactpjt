@@ -7,7 +7,8 @@ export default function ProductViews({categoryName, sliceNumber, columnNumber}) 
   var process = require('../../../../myprocess.json');
 
   const [ newData, setnewData ] = useState([]);
-
+  const [ categoryLists, setCategoryLists ] = useState([]);
+  
   useEffect(() => {
     fetch(`http://${process.IP}:${process.PORT}/product`)
     .then(res => {

@@ -21934,7 +21934,7 @@ a.default-btn {
   align-items: center;
   justify-content: center;
   height: 48px;
-  transition: all 0.5s ease;
+  transition: all 0.1s ease;
   transform: translateY(20px);
   opacity: 0;
   background-color: #a749ff;
@@ -28406,6 +28406,17 @@ a.default-btn {
   border-radius: 3px;
   background-color: #fff;
 }
+
+.sidebar-widget .sidebar-widget-list ul li .sidebar-widget-list-left .mark {
+  position: absolute;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #0062cc;
+  border-radius: 3px;
+  background-color: #0062cc;
+}
+
 .sidebar-widget .sidebar-widget-list ul li .sidebar-widget-list-left .checkmark::after {
   position: absolute;
   display: none;
@@ -28453,6 +28464,12 @@ a.default-btn {
   border-radius: 50px;
   background-color: #eeeeee;
 }
+
+.sidebar-widget .sidebar-widget-list ul li a span,
+.sidebar-widget .sidebar-widget-list ul li button span .mark {
+  background-color: red;
+}
+
 .sidebar-widget .sidebar-widget-list ul li a:hover span, .sidebar-widget .sidebar-widget-list ul li a.active span,
 .sidebar-widget .sidebar-widget-list ul li button:hover span,
 .sidebar-widget .sidebar-widget-list ul li button.active span {
