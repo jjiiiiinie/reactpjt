@@ -9,7 +9,8 @@ import Compare from './components/pages/compare/Compare';
 import WishList from './components/pages/wishlist/WishList';
 import Cart from './components/pages/cart/Cart';
 import ProductList from './components/pages/product/ProductList';
-import MyAccount from './components/pages/myaccount/MyAccount'
+import MyAccount from './components/pages/myaccount/MyAccount';
+import ReduxSample from './components/pages/reduxsample/ReduxSample';
 
 import "./assets/css/style.css";
 import "./assets/css/mystyle.css";
@@ -19,6 +20,9 @@ import "./assets/css/bootstrap.css";
 import "./assets/css/googlefont.css";
 import "./assets/icons8/css/line-awesome.min.css";
 import ToTop from './utilities/ToTop';
+
+import { Provider } from 'react-redux';
+import store from './redux/Store';
 
 function App()  {
   return (
@@ -34,6 +38,9 @@ function App()  {
           <Route exact path="/cart"><Cart /></Route>
           <Route exact path="/productlist"><ProductList /></Route>
           <Route exact path="/myaccount"><MyAccount /></Route>
+          <Provider store={store}>
+            <Route exact path="/reduxsample"><ReduxSample /></Route>
+          </Provider>
         </Switch>
       </ToTop>
     </BrowserRouter>

@@ -1,7 +1,7 @@
 import { ADD_SUBSCRIBER, REMOVE_SUBSCRIBER } from "./Types";
 
 const initialState = {
-  count: 100,
+  count: 0,
 }
 const subscriberReducer = (state = initialState, action) => {
   switch(action.type) {
