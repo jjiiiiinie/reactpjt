@@ -1,4 +1,39 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "userId": "",
+      "password": "",
+      "name": "",
+      "email": "",
+      "phone": ""
+    },
+    {
+      "id": 2,
+      "userId": "dia4654",
+      "email": "park940313@naver.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "name": "박지은",
+      "phone": "010-8527-4654"
+    },
+    {
+      "id": 3,
+      "userId": "dia4654",
+      "password": "qwqw1212!",
+      "name": "아이유",
+      "email": "park940313@naver.com",
+      "phone": "12312312312"
+    },
+    {
+      "id": 4,
+      "userId": "jeje123",
+      "password": "qwqw1212!",
+      "name": "진진",
+      "email": "a123@123.123",
+      "phone": "12312312312"
+    }
+  ],
   "color": [
     {
       "id": 0,

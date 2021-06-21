@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import UseFetch from '../../../../hooks/UseFetch';
 import SideCategoryList from './SideCategoryList';
 import SideColorList from './SideColorList';
