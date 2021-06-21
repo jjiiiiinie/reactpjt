@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import subscriberReducer from './subscribers/Action';
+import subscriberReducer from './subscribers/Reducer';
 
 const store = createStore(subscriberReducer)
 
